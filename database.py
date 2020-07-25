@@ -29,7 +29,7 @@ def get_movies(upcoming=False):
     with connection:
         cursor = connection.cursor()
         if upcoming:
-            today_timestamp = datetime.datetime.today().timstamp()
+            today_timestamp = datetime.datetime.today().timestamp()
             cursor.execute(SELECT_UPCOMING_MOVIES, (today_timestamp,))
         else:
             cursor.execute(SELECT_ALL_MOVIES)
